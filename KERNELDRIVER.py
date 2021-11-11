@@ -5,7 +5,7 @@ ntdll = windll.ntdll
 k32 = windll.kernel32
 u32 = windll.user32
 #
-# AKHS@2021
+# SPRINT@2021
 #
 
 
