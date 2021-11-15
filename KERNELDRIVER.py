@@ -486,9 +486,9 @@ def get_target_angle(local_p, target, bone_id):
     c = Math.vec_angles(Math.vec_normalize(c))
     if g_aimbot_rcs and local_p.get_shots_fired() > 1:
         p = local_p.get_vec_punch()
-        c.x -= p.x * 2.0
-        c.y -= p.y * 2.0
-        c.z -= p.z * 2.0
+        c.x -= p.x * 0.8
+        c.y -= p.y * 0.8
+        c.z -= p.z * 0.8
     return Math.vec_clamp(c)
 
 
@@ -580,35 +580,9 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
         exit(0)
-
-    print('[*]VirtualTables')
-    print('    VClient:            ' + hex(vt.client.table))
-    print('    VClientEntityList:  ' + hex(vt.entity.table))
-    print('    VEngineClient:      ' + hex(vt.engine.table))
-    print('    VEngineCvar:        ' + hex(vt.cvar.table))
-    print('    InputSystemVersion: ' + hex(vt.input.table))
-    print('[*]Offsets')
-    print('    EntityList:         ' + hex(nv.dwEntityList))
-    print('    ClientState:        ' + hex(nv.dwClientState))
-    print('    GetLocalPlayer:     ' + hex(nv.dwGetLocalPlayer))
-    print('    GetViewAngles:      ' + hex(nv.dwViewAngles))
-    print('    GetMaxClients:      ' + hex(nv.dwMaxClients))
-    print('    IsInGame:           ' + hex(nv.dwState))
-    print('[*]NetVars')
-    print('    m_iHealth:          ' + hex(nv.m_iHealth))
-    print('    m_vecViewOffset:    ' + hex(nv.m_vecViewOffset))
-    print('    m_lifeState:        ' + hex(nv.m_lifeState))
-    print('    m_nTickBase:        ' + hex(nv.m_nTickBase))
-    print('    m_vecPunch:         ' + hex(nv.m_vecPunch))
-    print('    m_iTeamNum:         ' + hex(nv.m_iTeamNum))
-    print('    m_vecOrigin:        ' + hex(nv.m_vecOrigin))
-    print('    m_hActiveWeapon:    ' + hex(nv.m_hActiveWeapon))
-    print('    m_iShotsFired:      ' + hex(nv.m_iShotsFired))
-    print('    m_iCrossHairID:     ' + hex(nv.m_iCrossHairID))
-    print('    m_dwBoneMatrix:     ' + hex(nv.m_dwBoneMatrix))
-    print('[*]Info')
-    print('    Creator:AKHS')
-    print('    VALVE BROXA PEGA NADA')
+    print('[*]Seja bem-vindo')
+    print('    Driver kernel injetado com sucesso ')
+    print('    MM Kernel Cheat')
     while mem.is_running() and not InputSystem.is_button_down(g_exit_key):
         k32.Sleep(1)
         if Engine.is_in_game():
@@ -653,7 +627,7 @@ if __name__ == "__main__":
                     if self.get_shots_fired() > 1:
                         new_punch = Vector3(current_punch.x - g_old_punch.x,
                                             current_punch.y - g_old_punch.y, 0)
-                        new_angle = Vector3(view_angle.x - new_punch.x * 2.0, view_angle.y - new_punch.y * 2.0, 0)
+                        new_angle = Vector3(view_angle.x - new_punch.x * 0.8, view_angle.y - new_punch.y * 0.8, 0)
                         u32.mouse_event(0x0001,
                                         int(((new_angle.y - view_angle.y) / fl_sensitivity) / -0.022),
                                         int(((new_angle.x - view_angle.x) / fl_sensitivity) / 0.022),
